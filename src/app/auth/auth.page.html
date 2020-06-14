@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">LOGIN PAGE</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <form (ngSubmit)="onSubmitLogin()" #loginForm="ngForm">
+      <ion-row>
+        <ion-col 
+        size-sm="8" 
+        offset-sm="2">
+          <ion-list>
+            <ion-item>
+              <ion-input 
+              type="email"
+              ngModel
+              name="Your Username"
+              placeholder="Email"
+              required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input 
+              type="password"
+              ngModel
+              name="pwd"
+              placeholder="Your Password"
+              required></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-sm="8" offset-sm="2">
+          <div class="ion-text-center">
+            <ion-button
+            type="submit"
+            color="primary"
+            expand="block"
+            [disabled]="!loginForm.form.valid">
+              LOGIN
+            </ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+</ion-content>
+
