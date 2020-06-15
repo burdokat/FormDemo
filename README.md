@@ -54,7 +54,9 @@ Notes:
     already tested and transformed this same demo into its analogous reactive
     driven approach, havin the same results. (Try it if you want).
   - You can search also in the heap snapshot the observables that keeps piling
-    up, hence, instances are not garbage collected.
+    up. What is happening is that the form instances are not being garbage
+    collected. Hence, everything from the form and up to its container are
+    been kept in memory.
 ```
 
 Conclusion:
