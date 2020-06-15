@@ -25,6 +25,9 @@ ionic serve
 
 ## Forewords
 
+So after all the troubleshooting and enclosing the issue, I created this
+demo example to share it with the public.
+
 Steps to follow
 
 ```
@@ -45,15 +48,17 @@ Notes:
     been simplified to its minimum expression using the minimum configurations
     to represent an angular template driven form. That should be enough to
     describe the exhibited unusual behaviour and report this as an issue.
-    I spent several hours in my original code where I am currently working
-    with more complex code in angular 8, and I migrated to angular 9 , so it
-    was quite a lot and tiresome work to narrow the memory leak.
-    So after all the troubleshooting and enclosing the issue, I created this
-    demo to share it with the public.
-  - The same behaviour is exhibited in reactive driven forms too. I have
+  - The SAME BEHABIOUR IS EXHIBITED in reactive driven forms too. I have
     already tested and transformed this same demo into its analogous reactive
-    driven approach, havin the same results. (Try it if you want).
-  - You can search also in the heap snapshot the observables that keeps piling
+    driven approach, having the same memory leak as in the template driven
+    approach. (Try it if you want).
+  - This was also tested with the submit buttton in the login page enabled. In
+    other words, with the disabled property of the submit button deleted in 
+    the login page, just to navigate back and forth without touching the form.
+    Testing this setup DID NOT EXHIBIT ANY MEMORY LEAK.
+  - A thorough test was made with angular 8, and it DID NOT EXHIBIT ANY MEMORY
+    LEAK AT ALL. 
+  - You can search also in the HEAP SNAPSHOT the observables that keeps piling
     up. What is happening is that the form instances are not being garbage
     collected. Hence, everything from the form and up to its container are
     been kept in memory.
